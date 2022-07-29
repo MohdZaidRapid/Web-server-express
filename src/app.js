@@ -1,18 +1,17 @@
+const path = require("path");
 const express = require("express");
+
+// console.log(__dirname);
+// console.log(path.join(__dirname, "../public"));
 
 const app = express();
 
-app.get("", (req, res) => {
-  res.send("Hello express!");
-});
+const publicDirectoryPath = path.join(__dirname, "../public");
+app.use(express.static(publicDirectoryPath));
 
-app.get("/help", (req, res) => {
-  res.send("Help page");
-});
 
-// app.com
-// app.com/help
-// app.com/about
+
+
 
 app.listen(3000, () => {
   console.log("Server running on 3000");
