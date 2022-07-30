@@ -9,7 +9,7 @@ const app = express();
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, "../public");
-const viewsPath = path.join(__dirname, "../templates");
+const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
 // Setup handlerbars engine and views location
@@ -47,6 +47,10 @@ app.get("/weather", (req, res) => {
     forecast: "It is working",
     location: "India",
   });
+});
+
+app.get("/help/*", (req, res) => {
+  res.send("Help article not found");
 });
 
 app.get("*", (req, res) => {
