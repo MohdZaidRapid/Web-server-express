@@ -37,7 +37,20 @@ app.get("/about", (req, res) => {
 app.get("/help", (req, res) => {
   res.render("help", {
     helpText: "This is my some my  helpful  Text",
+    title: "Help",
+    name: "Mohd Zaid",
   });
+});
+
+app.get("/weather", (req, res) => {
+  res.send({
+    forecast: "It is working",
+    location: "India",
+  });
+});
+
+app.get("*", (req, res) => {
+  res.send("My 404 page");
 });
 
 // /////////////lISTINING ON PORT
