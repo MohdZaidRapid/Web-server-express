@@ -65,7 +65,7 @@ app.get("*", (req, res) => {
   });
 });
 
-// /////////////lISTINING ON PORT
+// /////////////   LISTINING ON PORT
 app.listen(3000, () => {
   console.log("Server running on 3000");
 });
